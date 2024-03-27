@@ -105,6 +105,7 @@ function getRandomSayings(sayings, count) {
     return randomSayings;
 }
 
+
 /*Add new characters to the list but to the API and it doesnt work
 document.getElementById('characterForm').addEventListener('submit', async (event) => {
     event.preventDefault(); 
