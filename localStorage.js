@@ -17,10 +17,6 @@ function renderCharacters(characters) {
     });
    }
    
-  
-    
-   
-   
 
 
 // Save characters to localStorage

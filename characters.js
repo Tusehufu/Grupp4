@@ -1,5 +1,4 @@
 
-
 // Function to fetch characters from the API
 async function fetchCharacters() {
     try {
