@@ -13,18 +13,39 @@
     <h1><a href="episodes.html">Episodes</a></h1>
     </header>
 
+    <button id=character-OPT>Character Options</button>
+    <div class="container" id="character-options-container" style="display: none;">
+        <form id="character-options">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" id="update-character-Btn">Update Character</button>
+                <button type="submit" class="btn btn-primary" id="add-character-Btn">Add Character</button>
+                <button type="button" class="btn btn-danger" id="delete-character-Btn">Delete Character</button>
+            </div>
+            <div class="form-group" id="added-text">
+                <h3>Add, Update or Delete Episode</h3>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="characterName" placeholder="Character Name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="homePlanet" placeholder="Home Planet">
+            </div>
+        </form>
+       </div>
     
     
     <h1>\.....Characters...../</h1>
+    <div id="loadingIndicator" style="display: none">Laddar...</div>
 
     <div id="characters">
     <ul id="charactersList"></ul>
     </div>
 
-    
+    <script src="scripts/crud.js"></script>
     <script src="scripts/script.js"></script>
-    <script src="scripts/character.js"></script>
-    <script src="scripts/settings.js"></script>
+    <script src="scripts/characters.js"></script>
+    
+    
     
 </body>
 </html>

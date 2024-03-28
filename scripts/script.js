@@ -54,15 +54,7 @@ const API = {
     }
 };
 
-const newCharacter = {
-    name: "Fry",
-    homePlanet: "Earth",
-    age: 25,
-    gender: "male"
-};
 
-API.addCharacter(newCharacter);
-console.log("Character added:", newCharacter);
 
 
 API.getCharacters()
