@@ -17,7 +17,11 @@ function renderCharacters(characters) {
     });
    }
    
-
+// Call renderCharacters with characters from localStorage to display them on page load
+document.addEventListener("DOMContentLoaded", function() {
+  const characters = getCharactersFromStorage();
+  renderCharacters(characters);
+ });
 
 // Save characters to localStorage
 function saveCharactersToStorage(characters) {
@@ -33,7 +37,7 @@ function addCharacter(name, homePlanet) {
   console.log("Character added:", newCharacter);
   renderCharacters(characters); // Render characters on the webpage
 }
-// Event listener for form submission
+// Event listener for adding a character
 document
   .getElementById("addCharacterBtn")
   .addEventListener("click", function (event) {
@@ -64,7 +68,9 @@ document
     // Clear the input fields after updating to avoid having to click two times
     document.getElementById("characterName").value = '';
     document.getElementById("homePlanet").value = '';
-    renderCharacters(characters);
+      // Retrieve updated characters from localStorage and render them
+      const updatedCharacters = getCharactersFromStorage();
+    renderCharacters(updatedCharacters);
   });
 
 // Delete a character from localStorage
