@@ -5,10 +5,10 @@ const API_URLS = {
     episodes: `${BASE_URL}episodes`,
 };
 
-async function getJson(url){
+async function getJson(url) {
     const response = await fetch(url);
 
-   return await response.json()
+    return await response.json()
 }
 
 
@@ -28,16 +28,16 @@ const API = {
 
     async addCharacter(character) {
         let characters = await this.getCharacters(); // "this" refers to the API object
-    
+
         // Generate a unique ID for the character
         const uniqueId = this.generateUniqueId();
-    
+
         // Add the unique ID to the character object
         character.id = uniqueId;
-    
+
         // Check if character with the same ID already exists
         const characterExists = characters.some(char => char.id === character.id);
-    
+
         // If character with the same ID doesn't exist, add it
         if (!characterExists) {
             characters.push(character);
@@ -46,24 +46,13 @@ const API = {
             console.log('Character with the same ID already exists.');
         }
     },
-    
+
     generateUniqueId() {
         const timestamp = Date.now(); // Get current timestamp
         const random = Math.floor(Math.random() * 1000000); // Generate random number
         return `${timestamp}-${random}`; // Combine timestamp and random number
     }
 };
-
-const newCharacter = {
-    name: "Fry",
-    homePlanet: "Earth",
-    age: 25,
-    gender: "male"
-};
-
-API.addCharacter(newCharacter);
-console.log("Character added:", newCharacter);
-
 
 API.getCharacters()
     .then(characters => {
@@ -75,7 +64,7 @@ API.getCharacters()
         console.error("Error fetching characters:", error);
     });
 
-    API.getEpisodes()
+API.getEpisodes()
     .then(episodes => {
         // Process charactersData as needed
         console.log(episodes); // Example: logging charactersData
@@ -86,8 +75,9 @@ API.getCharacters()
     });
 
 function setDelayTimer() {
-    setTimeout(function() {location.reload();
-    }, 1000); 
-        
+    setTimeout(function () {
+        location.reload();
+    }, 1000);
+
 }
 
